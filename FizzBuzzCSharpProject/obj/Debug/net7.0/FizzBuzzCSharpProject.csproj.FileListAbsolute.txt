@@ -1,0 +1,15 @@
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\bin\Debug\net7.0\FizzBuzzCSharpProject.exe
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\bin\Debug\net7.0\FizzBuzzCSharpProject.deps.json
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\bin\Debug\net7.0\FizzBuzzCSharpProject.runtimeconfig.json
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\bin\Debug\net7.0\FizzBuzzCSharpProject.dll
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\bin\Debug\net7.0\FizzBuzzCSharpProject.pdb
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\FizzBuzzCSharpProject.csproj.AssemblyReference.cache
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\FizzBuzzCSharpProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\FizzBuzzCSharpProject.AssemblyInfoInputs.cache
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\FizzBuzzCSharpProject.AssemblyInfo.cs
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\FizzBuzzCSharpProject.csproj.CoreCompileInputs.cache
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\FizzBuzzCSharpProject.dll
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\refint\FizzBuzzCSharpProject.dll
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\FizzBuzzCSharpProject.pdb
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\FizzBuzzCSharpProject.genruntimeconfig.cache
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net7.0\ref\FizzBuzzCSharpProject.dll
