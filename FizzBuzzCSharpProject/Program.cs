@@ -11,26 +11,33 @@
         {
             var result = "";
 
-            if (x % 3 == 0)
+            if (x % 11 == 0)
             {
-                result += "Fizz";
+                result = "Bong";
             }
-
-            if (x % 5 == 0)
+            else
             {
-                result += "Buzz";
-            }
+                if (x % 3 == 0)
+                {
+                    result += "Fizz";
+                }
 
-            if (x % 7 == 0)
-            {
-                result += "Bang";
-            }
+                if (x % 5 == 0)
+                {
+                    result += "Buzz";
+                }
 
-            if (result == "")
-            {
-                result = x.ToString();
-            }
+                if (x % 7 == 0)
+                {
+                    result += "Bang";
+                }
 
+                if (result == "")
+                {
+                    result = x.ToString();
+                }
+            }
+            
             return result;
         }
 
