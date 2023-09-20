@@ -1,6 +1,8 @@
-﻿namespace FizzBuzzCSharpProject
+﻿using System.Text.RegularExpressions;
+
+namespace FizzBuzzCSharpProject
 {
-    internal static class Program
+    internal static partial class Program
     {
         private static void Main(string[] args)
         {
@@ -46,7 +48,15 @@
                     result = result.Insert(bIndex, "Fezz");
                 }
             }
-                
+            
+            if (x % 17 == 0 && result != "")
+            {
+                var resultArray = MyRegex().Matches(result)
+                    .Cast<Match>()
+                    .Select(m => m.Value);
+                result = string.Join("", resultArray.Reverse());
+            }
+             
             if (result == "")
             {
                 result = x.ToString();
@@ -62,6 +72,9 @@
                 Console.WriteLine(FizzBuzz(i));
             }
         }
+
+        [GeneratedRegex("([A-Z][a-z]+)")]
+        private static partial Regex MyRegex();
     }
 
 }
