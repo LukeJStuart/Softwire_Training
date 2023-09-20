@@ -31,11 +31,25 @@
                 {
                     result += "Bang";
                 }
+            }
+            
+            if (x % 13 == 0)
+            {
+                var bIndex = result.IndexOf("B", StringComparison.Ordinal);
 
-                if (result == "")
+                if (bIndex == -1)
                 {
-                    result = x.ToString();
+                    result += "Fezz";
                 }
+                else
+                {
+                    result = result.Insert(bIndex, "Fezz");
+                }
+            }
+                
+            if (result == "")
+            {
+                result = x.ToString();
             }
             
             return result;
