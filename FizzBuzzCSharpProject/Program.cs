@@ -9,22 +9,29 @@
 
         private static string FizzBuzz(int x)
         {
-            if (x % 3 == 0 && x % 5 == 0)
+            var result = "";
+
+            if (x % 3 == 0)
             {
-                return "FizzBuzz";
+                result += "Fizz";
             }
-            else if (x % 3 == 0)
+
+            if (x % 5 == 0)
             {
-                return "Fizz";
+                result += "Buzz";
             }
-            else if (x % 5 == 0)
+
+            if (x % 7 == 0)
             {
-                return "Buzz";
+                result += "Bang";
             }
-            else
+
+            if (result == "")
             {
-                return x.ToString();
-            }  
+                result = x.ToString();
+            }
+
+            return result;
         }
 
         private static void FizzBuzzIterate(int x)
