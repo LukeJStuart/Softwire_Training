@@ -6,7 +6,19 @@ namespace FizzBuzzCSharpProject
     {
         private static void Main(string[] args)
         {
-            FizzBuzzIterate(100);
+            var userNum = 100;
+            try
+            {
+                Console.Write("How high should we go? ");
+                var input = Console.ReadLine() ?? throw new InvalidOperationException();
+                userNum = Math.Abs(int.Parse(input));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: Invalid input. We will go to 100.");
+            }
+
+            FizzBuzzIterate(userNum);
         }
 
         private static string FizzBuzz(int x)
