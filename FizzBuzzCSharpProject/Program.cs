@@ -13,7 +13,7 @@ namespace FizzBuzzCSharpProject
                 var input = Console.ReadLine() ?? throw new InvalidOperationException();
                 userNum = Math.Abs(int.Parse(input));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Error: Invalid input. We will go to 100.");
             }
@@ -23,46 +23,49 @@ namespace FizzBuzzCSharpProject
 
         private static string FizzBuzz(int x)
         {
-            var result = "";
+            var result = new List<string>();
 
             if (x % 11 == 0)
             {
-                result = "Bong";
+                result.Add("Bong");
             }
             else
             {
                 if (x % 3 == 0)
                 {
-                    result += "Fizz";
+                    result.Add("Fizz");
                 }
 
                 if (x % 5 == 0)
                 {
-                    result += "Buzz";
+                    result.Add("Buzz");
                 }
 
                 if (x % 7 == 0)
                 {
-                    result += "Bang";
+                    result.Add("Bang");
                 }
             }
             
+            // Need to fix this so that can find where in result list to insert Fezz
             if (x % 13 == 0)
             {
-                var bIndex = result.IndexOf("B", StringComparison.Ordinal);
-
-                if (bIndex == -1)
+                var bWord = result.Find(s => s.StartsWith("B"));
+                
+                if (bWord == null)
                 {
-                    result += "Fezz";
+                    result.Add("Fezz");
                 }
                 else
                 {
-                    result = result.Insert(bIndex, "Fezz");
+                    var bWordIndex = result.FindIndex(bWord);
+                    result = result.Insert(, "Fezz");
                 }
             }
             
             if (x % 17 == 0 && result != "")
             {
+                // Regex broken by switching to .NET 6.0 Need to replace anyway - change result to array as per Ata
                 var resultArray = MyRegex().Matches(result)
                     .Cast<Match>()
                     .Select(m => m.Value);

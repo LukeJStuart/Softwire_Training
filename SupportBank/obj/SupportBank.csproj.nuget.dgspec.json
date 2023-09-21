@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lukstu\\Documents\\Softwire_Training\\FizzBuzzCSharpProject\\FizzBuzzCSharpProject.csproj": {}
+    "C:\\Users\\lukstu\\Documents\\Softwire_Training\\SupportBank\\SupportBank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lukstu\\Documents\\Softwire_Training\\FizzBuzzCSharpProject\\FizzBuzzCSharpProject.csproj": {
+    "C:\\Users\\lukstu\\Documents\\Softwire_Training\\SupportBank\\SupportBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\FizzBuzzCSharpProject\\FizzBuzzCSharpProject.csproj",
-        "projectName": "FizzBuzzCSharpProject",
-        "projectPath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\FizzBuzzCSharpProject\\FizzBuzzCSharpProject.csproj",
+        "projectUniqueName": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\SupportBank\\SupportBank.csproj",
+        "projectName": "SupportBank",
+        "projectPath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\SupportBank\\SupportBank.csproj",
         "packagesPath": "C:\\Users\\lukstu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\FizzBuzzCSharpProject\\obj\\",
+        "outputPath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\SupportBank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lukstu\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,12 +37,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "CsvHelper": {
-              "target": "Package",
-              "version": "[30.0.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

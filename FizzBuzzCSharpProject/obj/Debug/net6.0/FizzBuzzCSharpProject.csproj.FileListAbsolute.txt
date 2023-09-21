@@ -1,0 +1,5 @@
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net6.0\FizzBuzzCSharpProject.csproj.AssemblyReference.cache
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net6.0\FizzBuzzCSharpProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net6.0\FizzBuzzCSharpProject.AssemblyInfoInputs.cache
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net6.0\FizzBuzzCSharpProject.AssemblyInfo.cs
+C:\Users\lukstu\Documents\Softwire_Training\FizzBuzzCSharpProject\obj\Debug\net6.0\FizzBuzzCSharpProject.csproj.CoreCompileInputs.cache

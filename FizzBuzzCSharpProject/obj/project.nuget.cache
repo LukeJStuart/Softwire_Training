@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UxCoQEQbbOsZ+zkTO3RxH9CJvmJ84MUCzbjyLIvA80YG46DjfWk3qaqF0LcQZJPPxwcmg5J8CCTb35TKIDLbDg==",
+  "dgSpecHash": "2M2fhypl2mWEMURA8bMte6ouCUpTr7fpJo8tvgksnUzJ1r86/6OINV0X3ztLcLrfP4HAzZBunbvJiXpg365BsQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\FizzBuzzCSharpProject\\FizzBuzzCSharpProject.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lukstu\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
