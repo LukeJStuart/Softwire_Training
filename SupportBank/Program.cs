@@ -4,7 +4,7 @@ using CsvHelper;
 
 namespace SupportBank
 {
-    internal static partial class Program
+    internal static class Program
     {
         private static void Main(string[] args)
         {
@@ -40,49 +40,50 @@ namespace SupportBank
                 Console.Write("Enter Command: ");
                 var userInput = Console.ReadLine();
 
-                if (userInput is not null)
+                if (userInput is null)
                 {
-                    if (userInput == "List All")
+                    continue;
+                }
+                if (userInput == "List All")
+                {
+                    Console.WriteLine("Listing all accounts:");
+                    Console.WriteLine();
+            
+                    Console.WriteLine("{0,-10}{1,10}", "Name", "Balance");
+                    Console.WriteLine();
+            
+                    foreach (var a in accounts)
                     {
-                        Console.WriteLine("Listing all accounts:");
-                        Console.WriteLine();
-            
-                        Console.WriteLine("{0,-10}{1,10}", "Name", "Balance");
-                        Console.WriteLine();
-            
-                        foreach (var a in accounts)
-                        {
-                            Console.WriteLine("{0,-10}{1,10:\u00a3#.##}", a.Key, a.Value);
-                        }
+                        Console.WriteLine("{0,-10}{1,10:£0.00}", a.Key, a.Value);
                     }
-                    else if (commandRegex.IsMatch(userInput))
+                }
+                else if (commandRegex.IsMatch(userInput))
+                {
+                    if (accounts.Select(a => a.Key).Contains(userInput[5..^1]))
                     {
-                        if (accounts.Select(a => a.Key).Contains(userInput[5..^1]))
-                        {
-                            var chosenName = userInput[5..^1];
-                            Console.WriteLine("Listing all transactions for " + chosenName + ":");
-                            Console.WriteLine();
+                        var chosenName = userInput[5..^1];
+                        Console.WriteLine("Listing all transactions for " + chosenName + ":");
+                        Console.WriteLine();
             
-                            Console.WriteLine("{0,-10}{1,-10}{2,-15}{3,-15}{4,-30}", "Date", "Amount", "From", "To", "Narrative");
-                            Console.WriteLine();
+                        Console.WriteLine("{0,-15}{1,-10}{2,-15}{3,-15}{4,-30}", "Date", "Amount", "From", "To", "Narrative");
+                        Console.WriteLine();
 
-                            foreach (var r in records.Where(r => r.From == chosenName || r.To == chosenName))
-                            {
-                                Console.WriteLine("{0,-10}{1,-10:\u00a30.00}{2,-15}{3,-15}{4,-30}", r.Date, double.Parse(r.Amount), r.From, r.To, r.Narrative);
-                            }
-                        }
-                        else
+                        foreach (var r in records.Where(r => r.From == chosenName || r.To == chosenName))
                         {
-                            Console.WriteLine("Invalid Account Name.");
+                            Console.WriteLine("{0,-15}{1,-10:£0.00}{2,-15}{3,-15}{4,-30}", r.Date, double.Parse(r.Amount), r.From, r.To, r.Narrative);
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Invalid Command.");
+                        Console.WriteLine("Invalid Account Name.");
                     }
-
-                    Console.WriteLine();
                 }
+                else
+                {
+                    Console.WriteLine("Invalid Command.");
+                }
+
+                Console.WriteLine();
             }
         }
 
