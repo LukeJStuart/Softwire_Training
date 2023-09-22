@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Xml.Serialization;
 using CsvHelper;
 using Newtonsoft.Json;
 using NLog;
@@ -24,8 +25,8 @@ namespace SupportBank
             
             logger.Debug("Program Initialised");
             
-            // Possible files are Transactions2014.csv , DodgyTransactions2015.csv , Transactions2013.json
-            var records = GetRecords("Transactions2013.json")!.ToList();
+            // Possible files are Transactions2014.csv , DodgyTransactions2015.csv , Transactions2013.json , Transactions2012.xml
+            var records = GetRecords("Transactions2012.xml")!.ToList();
             logger.Debug("Read csv contents into list");
             var accounts = records
                 .Select(r => r.From)
@@ -129,10 +130,18 @@ namespace SupportBank
                 using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
                 return csv.GetRecords<Payment>().ToList();
             }
-            else
+
+            if (!file.Contains(".xml"))
+                
+                // XML Functionality NOT yet fully implemented - issue with mapping transaction participants from xml
+                return JsonConvert.DeserializeObject<List<Payment>>(
+                    File.ReadAllText(@"C:\Users\lukstu\Documents\Softwire_Training\" + file));
             {
-                return JsonConvert.DeserializeObject<List<Payment>>(File.ReadAllText(@"C:\Users\lukstu\Documents\Softwire_Training\" + file));
+                using var reader = new StreamReader(@"C:\Users\lukstu\Documents\Softwire_Training\" + file);
+                var deserializer = new XmlSerializer(typeof(List<Payment>), new XmlRootAttribute("TransactionList"));
+                return (List<Payment>)deserializer.Deserialize(reader)!;
             }
+
         }
     }
 }
