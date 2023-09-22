@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 using CsvHelper;
+using Newtonsoft.Json;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
@@ -23,8 +24,8 @@ namespace SupportBank
             
             logger.Debug("Program Initialised");
             
-            // Possible files are Transactions2014.csv , DodgyTransactions2015.csv 
-            var records = GetRecords("DodgyTransactions2015.csv").ToList();
+            // Possible files are Transactions2014.csv , DodgyTransactions2015.csv , Transactions2013.json
+            var records = GetRecords("Transactions2013.json")!.ToList();
             logger.Debug("Read csv contents into list");
             var accounts = records
                 .Select(r => r.From)
@@ -103,7 +104,7 @@ namespace SupportBank
 
                         foreach (var r in records.Where(r => r.From == chosenName || r.To == chosenName))
                         {
-                            Console.WriteLine("{0,-15}{1,-10:£0.00}{2,-15}{3,-15}{4,-30}", r.Date, double.Parse(r.Amount), r.From, r.To, r.Narrative);
+                            Console.WriteLine("{0,-15}{1,-10:£0.00}{2,-15}{3,-15}{4,-30}", r.Date[..10], double.Parse(r.Amount), r.From, r.To, r.Narrative);
                         }
                     }
                     else
@@ -120,11 +121,18 @@ namespace SupportBank
             }
         }
 
-        private static System.Collections.Generic.IEnumerable<SupportBank.Payment> GetRecords(string file)
+        private static IEnumerable<Payment>? GetRecords(string file)
         {
-            using var reader = new StreamReader(@"C:\Users\lukstu\Documents\Softwire_Training\" + file);
-            using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-            return csv.GetRecords<Payment>().ToList();
+            if (file.Contains(".csv"))
+            {
+                using var reader = new StreamReader(@"C:\Users\lukstu\Documents\Softwire_Training\" + file);
+                using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+                return csv.GetRecords<Payment>().ToList();
+            }
+            else
+            {
+                return JsonConvert.DeserializeObject<List<Payment>>(File.ReadAllText(@"C:\Users\lukstu\Documents\Softwire_Training\" + file));
+            }
         }
     }
 }

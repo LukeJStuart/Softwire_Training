@@ -17,3 +17,4 @@ C:\Users\lukstu\Documents\Softwire_Training\SupportBank\obj\Debug\net6.0\Support
 C:\Users\lukstu\Documents\Softwire_Training\SupportBank\obj\Debug\net6.0\SupportBank.genruntimeconfig.cache
 C:\Users\lukstu\Documents\Softwire_Training\SupportBank\obj\Debug\net6.0\ref\SupportBank.dll
 C:\Users\lukstu\Documents\Softwire_Training\SupportBank\bin\Debug\net6.0\NLog.dll
+C:\Users\lukstu\Documents\Softwire_Training\SupportBank\bin\Debug\net6.0\Newtonsoft.Json.dll

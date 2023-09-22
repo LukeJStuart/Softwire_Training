@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "g3N4OzImxzt0uF07jhSxPWYAq/1V3townvVEJHfH2Eh0h1jCFtBdR2D6+SNqvTQkvKphMdVpZxvm3CsQbs/HPw==",
+  "dgSpecHash": "cjIsLyb3LOlxMdJ6dYgTDqj8n+CmGS3LH5YHbCxtbUpvAZuc918BOh/sbFRTkkofwojrn2cbaX34Is805i9mMg==",
   "success": true,
   "projectFilePath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\SupportBank\\SupportBank.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\lukstu\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\lukstu\\.nuget\\packages\\nlog\\5.2.4\\nlog.5.2.4.nupkg.sha512"
   ],
   "logs": []
