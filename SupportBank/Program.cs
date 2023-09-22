@@ -1,14 +1,30 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 using CsvHelper;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+
 
 namespace SupportBank
 {
     internal static class Program
     {
-        private static void Main(string[] args)
+        
+        private static  ILogger logger = LogManager.GetCurrentClassLogger();
+        
+        internal static void Main(string[]? args)
         {
-            var records = GetRecords().ToList();
+            var config = new LoggingConfiguration();
+            var target = new FileTarget { FileName = @"C:\Users\lukstu\Documents\Logs\SupportBank.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
+            config.AddTarget("File Logger", target);
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
+            LogManager.Configuration = config;
+            
+            logger.Debug("Program Initialised");
+            
+            // Possible files are Transactions2014.csv , DodgyTransactions2015.csv 
+            var records = GetRecords("Transactions2014.csv").ToList();
             var accounts = records
                 .Select(r => r.From)
                 .Concat(
@@ -87,9 +103,9 @@ namespace SupportBank
             }
         }
 
-        private static System.Collections.Generic.IEnumerable<SupportBank.Payment> GetRecords()
+        private static System.Collections.Generic.IEnumerable<SupportBank.Payment> GetRecords(string file)
         {
-            using var reader = new StreamReader(@"C:\Users\lukstu\Documents\Softwire_Training\Transactions2014.csv");
+            using var reader = new StreamReader(@"C:\Users\lukstu\Documents\Softwire_Training\" + file);
             using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
             return csv.GetRecords<Payment>().ToList();
         }
