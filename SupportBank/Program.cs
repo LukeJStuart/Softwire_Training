@@ -24,7 +24,8 @@ namespace SupportBank
             logger.Debug("Program Initialised");
             
             // Possible files are Transactions2014.csv , DodgyTransactions2015.csv 
-            var records = GetRecords("Transactions2014.csv").ToList();
+            var records = GetRecords("DodgyTransactions2015.csv").ToList();
+            logger.Debug("Read csv contents into list");
             var accounts = records
                 .Select(r => r.From)
                 .Concat(
@@ -33,11 +34,27 @@ namespace SupportBank
                 .Distinct()
                 .ToDictionary(uniqueName => uniqueName, _ => 0.0);
 
+            var dodgyRecords = new List<Payment>();
+
             foreach (var p in records)
             {
-                accounts[p.From] -= double.Parse(p.Amount);
-                accounts[p.To] += double.Parse(p.Amount);
-
+                try
+                {
+                    accounts[p.From] -= double.Parse(p.Amount);
+                    accounts[p.To] += double.Parse(p.Amount);
+                }
+                catch (Exception)
+                {
+                    logger.Debug("Invalid Amount Encountered: " + p.Amount + " Transaction Marked for Deletion");
+                    dodgyRecords.Add(p);
+                }
+            }
+            
+            //Removing transactions with invalid amounts from records so they will not show in results from List[]
+            foreach (var p in dodgyRecords)
+            {
+                logger.Debug("Transaction with Invalid Amount '" + p.Amount + "' Removed from Set.");
+                records.Remove(p);
             }
             
             var commandRegex = new Regex("List\\[[^\\]]*\\]", RegexOptions.IgnoreCase);
