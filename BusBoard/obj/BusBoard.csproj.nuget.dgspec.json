@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\lukstu\\Documents\\Softwire_Training\\BusBoard\\BusBoard.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lukstu\\Documents\\Softwire_Training\\BusBoard\\BusBoard.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\BusBoard\\BusBoard.csproj",
+        "projectName": "BusBoard",
+        "projectPath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\BusBoard\\BusBoard.csproj",
+        "packagesPath": "C:\\Users\\lukstu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\BusBoard\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lukstu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.1-alpha.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

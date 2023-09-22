@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "t/lkjfZE8Ocidg9jSafx3Uzm66s0gjvpQpVYHSfO3/tc9cg+AhsEl5CZeLfS+6trvtk6eFQZQK2Hkuq+aG9Clg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lukstu\\Documents\\Softwire_Training\\BusBoard\\BusBoard.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lukstu\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\lukstu\\.nuget\\packages\\restsharp\\110.2.1-alpha.0.13\\restsharp.110.2.1-alpha.0.13.nupkg.sha512",
+    "C:\\Users\\lukstu\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\lukstu\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\lukstu\\.nuget\\packages\\system.text.json\\7.0.3\\system.text.json.7.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
